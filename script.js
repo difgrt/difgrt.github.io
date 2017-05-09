@@ -28,6 +28,12 @@ function onPlayerReady(e) {
         listener.simple_combo('1', activePlayerFn(jtbc, $('#jtbc_wrp')));
         listener.simple_combo('2', activePlayerFn(sbs, $('#sbs_wrp')));
         listener.simple_combo('3', activePlayerFn(kbs, $('#kbs_wrp')));
+        listener.simple_combo('m', function() {
+          if (activePlayer.isMuted() == false)
+            activePlayer.mute();
+          else
+            activePlayer.unMute();
+        });
     }
 }
 
@@ -47,4 +53,3 @@ function onYouTubeIframeAPIReady() {
     sbs = createPlayer('sbs', 'lo7tgFI8Q9I');
     kbs = createPlayer('kbs', 'mHR_bM2BWqQ');
 }
-
